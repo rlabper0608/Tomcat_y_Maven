@@ -55,10 +55,10 @@ Ahora podemos ir a visualizar el ejemplo.
 ## Tarea
 Para esta tarea, la voy a hacer clonando el proyecto de `https://github.com/cameronmcnz/rock-paper-scissors.git`, con un pom exterior, para pasarlo de nuevo a la máquina y con la configuración necesaria, y para su posterior despliegue. 
 La configuración del `bootstrap.sh` sería la siguiente: 
-![VagrantFile](img/bootstrap-tarea.png).
+![VagrantFile](img/bootstrap-juego.png).
 
 Y la del `pom-juego.xml` es esta: 
-![VagrantFile](img/pom-tarea.png).
+![VagrantFile](img/pom-juego.png).
 
 Por último para esta práctica vamos a ver los comandos necearios en el `bootstrap.sh` para desplegar a la vez el juego y el ejemplo de la práctica.
 ![VagrantFile](img/bootstrap-juego-tarea.png).
