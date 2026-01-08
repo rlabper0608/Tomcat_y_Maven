@@ -25,7 +25,7 @@
             <version>2.2</version>
             <configuration>
                 <url>http://192.168.56.10:8080/manager/text</url>
-                <server>Tomcat</server>
+                <server>TomcatServer</server>
                 <path>/despliegue</path>
             </configuration>
         </plugin>
