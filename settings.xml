@@ -2,22 +2,17 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  
   <pluginGroups>
+    <pluginGroup>org.apache.tomcat.maven</pluginGroup>
   </pluginGroups>
-
-
-  <proxies>
-  </proxies>
 
   <servers>
     <server>
-    <id>Tomcat</id>
-    <username>deploy</username>
-    <password>1234</password>
+      <id>TomcatServer</id> 
+      <username>admin</username>
+      <password>admin</password>
     </server>
   </servers>
-  <mirrors>
-  </mirrors>
-  <profiles>
-  </profiles>
+
 </settings>

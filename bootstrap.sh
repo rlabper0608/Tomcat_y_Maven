@@ -9,7 +9,7 @@ apt-get install -y zstd curl wget
 echo "deb http://deb.debian.org/debian bullseye main" | sudo tee /etc/apt/sources.list.d/bullseye.list
 apt-get update -y
 apt-get install -y openjdk-11-jdk
-apt install -y tomcat9 tomcat9-admin
+apt install -y tomcat9 tomcat9-admin git
 
 getent group tomcat9 >/dev/null || groupadd tomcat9
 getent passwd tomcat9 >/dev/null || useradd -s /bin/false -g tomcat9 -d /etc/tomcat9 tomcat9
@@ -26,6 +26,7 @@ systemctl status tomcat9
 systemctl restart tomcat9
 
 mvn --v
+rm -rf tomcat-war
 
 mvn archetype:generate -DgroupId=org.zaidinvergeles \
                          -DartifactId=tomcat-war \
@@ -33,4 +34,9 @@ mvn archetype:generate -DgroupId=org.zaidinvergeles \
                          -DarchetypeArtifactId=maven-archetype-webapp \
                          -DinteractiveMode=false
 
-cp /vagrant/pom.xml /tomcat-war/pom.xml
+cp /vagrant/pom.xml /home/vagrant/tomcat-war/pom.xml
+chown -R vagrant:vagrant /home/vagrant/tomcat-war
+
+git clone https://github.com/cameronmcnz/rock-paper-scissors.git
+cd rock-paper-scissors
+git checkout patch-1
