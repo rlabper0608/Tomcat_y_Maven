@@ -37,6 +37,19 @@ mvn archetype:generate -DgroupId=org.zaidinvergeles \
 cp /vagrant/pom.xml /home/vagrant/tomcat-war/pom.xml
 chown -R vagrant:vagrant /home/vagrant/tomcat-war
 
+rm -rf rock-paper-scissors
+
 git clone https://github.com/cameronmcnz/rock-paper-scissors.git
 cd rock-paper-scissors
 git checkout patch-1
+cd ..
+cp /vagrant/pom-juego.xml /home/vagrant/rock-paper-scissors/pom.xml
+chown -R vagrant:vagrant /home/vagrant/rock-paper-scissors
+
+# 1. Desplegar la aplicación de prueba (tomcat-war)
+cd /home/vagrant/tomcat-war
+sudo -u vagrant mvn tomcat7:redeploy
+
+# 2. Desplegar el juego (rock-paper-scissors)
+cd /home/vagrant/rock-paper-scissors
+sudo -u vagrant mvn tomcat7:redeploy
